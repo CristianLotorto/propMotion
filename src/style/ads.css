@@ -1,0 +1,24 @@
+.ads-left{
+  width: 16%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left:40px ;
+}
+
+.advertise{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 250px;
+  margin: 15px 15px 0 0;
+  background-color: rgb(84, 74, 74);
+}
+
+.advertise
+h3{
+  color:white ;
+}

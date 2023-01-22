@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quantico&family=Sawarabi+Mincho&display=swap');
+
+.property{
+  width: 100%;
+  height: 350px;
+  display: flex;
+  margin-top: 15px;
+  margin-right: 85px;
+  background-color: rgb(84, 74, 74);
+  border-radius: 10px;
+}
+
+.property-img{
+  width: 25%;
+  height: 350px;
+  background-color: #4d896d;
+  border-radius: 10px 0 0 10px;
+  padding: 75px;
+}
+
+.description-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 18px;
+  font-family: 'Sawarabi Mincho', serif;
+  color: #FFF;
+
+}
+
+.location-price-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Quantico', sans-serif;
+  font-weight: bold;
+  margin: 17px 0 19px 0;
+}
+
+.location{
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.location
+img{
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+.price{
+  font-size: 30px;
+  letter-spacing: 2.5px;
+}
+
+.type-maintenace-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.prop-type{
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 21px;
+}
+
+.maintenace-fees{
+  margin-right:50px ;
+  font-weight:300 ;
+  margin-top: -22px;
+}
+
+.rooms{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.room{
+  margin-right: 38px;
+}
+
+.description-title{
+  margin-bottom: 10px;
+}
+
+.description{
+  max-width: 850px;
+  height: 50px;
+  margin:0 30px 10px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.property-buttons-container{
+  display: flex;
+  margin: 0 0 17px 8px;
+  align-content: flex-end;
+  justify-content: space-between;
+}
+
+.buttons-right{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 60px;
+}

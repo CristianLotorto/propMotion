@@ -1,0 +1,10 @@
+.search
+input{
+  font-family: 'Quantico', sans-serif;
+  font-size: 14px;
+  width: 450px;
+  height: 40px;
+  padding-left: 8px;
+  border-radius: 3px;
+  box-shadow: -1px 11px 15px -4px rgba(0,0,0,0.4);
+}
