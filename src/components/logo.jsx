@@ -1,18 +1,22 @@
 import React from "react";
-import logo from '../img/Logo4_preview_rev_2.png';
+import logo from '../img/ent7.png';
 import '../style/logo.css';
 
 function Logo(){
   return(
+    
     <div className='banner-logo-container'>
 
-      <img src={logo} alt="PropMotion Logo" />
-
-      <h1>
-        PropMotion
-      </h1>
+      <a href="http://localhost:3000">
+        <img src={logo} alt="PropMotion Logo" />
+    
+        <h1>
+          PropMotion
+        </h1>
+      </a>
 
     </div>
+
   );
 }
 

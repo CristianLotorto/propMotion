@@ -1,40 +1,51 @@
 button{
-  color: #fff;
-  background-color: rgba(58,119,164,100%);
-  border: 1px solid rgba(58,119,164,100%);
-  border-radius:3px ;
-  box-shadow: -1px 11px 15px -4px rgba(0,0,0,0.4);
+  color: #fff !important;
+  background-color: #86813be4 !important;
+  border: 1px solid #86813b !important;
+  border-radius:3px  !important;
+  box-shadow: -1px 11px 15px -4px rgba(0,0,0,0.4) !important;
+}
+
+.logout-button{
+  width: 80px !important;
+  height: 25px !important;
+  margin-top: 5px !important;
+}
+
+button:hover{
+  cursor: pointer !important;
 }
 
 .banner-button{
-  width: 135px;
-  height: 40px;
-  font-family: 'Quantico', sans-serif;
-  font-size: 16px;
-  letter-spacing: 1.5px;
+  width: 135px !important;
+  height: 40px !important;
+  font-family: 'Quantico', sans-serif !important;
+  font-size: 16px !important;
+  letter-spacing: 1.5px !important;
+  margin-right: 20px !important;
 }
 
 .like-button{
-  width: 47px;
-  height: 47px;
+  width: 47px !important;
+  height: 47px !important;
 }
 
 .wsp-button{
-  width: 47px;
-  height: 47px;
+  width: 47px !important;
+  height: 47px !important;
 }
 
 .mail-button{
-  width: 140px;
-  height: 47px;
+  width: 140px !important;
+  height: 47px !important;
 }
 
 .mail-button
 p{
-  font-family: 'Quantico', sans-serif;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  font-family: 'Quantico', sans-serif !important;
+  font-size: 18px !important;
+  letter-spacing: 1.5px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
 }

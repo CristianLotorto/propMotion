@@ -5,7 +5,7 @@ import BedIcon from '../img/icons8-cama-vacía-100.png';
 import ToiletIcon from '../img/icons8-clean-toilet-100.png';
 import SurfaceIcon from '../img/icons8-superficie-100.png';
 import LocationIcon from '../img/icons8-marker-o-100.png';
-import Button from './button';
+import Button from './Button';
 import heart from '../img/heart.png';
 import wsap from '../img/icons8-whatsapp-100.png';
 import mail from '../img/icons8-mensaje-100.png';
@@ -44,16 +44,16 @@ function Property({location,currency, price, period, maintenaceFees, propType, s
         </div>
 
         <div className='property-buttons-container'>
-          <Button 
+          <Button
           buttonType='like-button'
           text={heartIcon} />
 
           <div className="buttons-right">
 
-          <Button 
+          <Button
           buttonType='wsp-button'
           text={wsapIcon} />
-          <Button 
+          <Button
           buttonType='mail-button'
           text={mailIcon} />
 

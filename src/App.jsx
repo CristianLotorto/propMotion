@@ -1,42 +1,93 @@
+import { useAuth0 } from '@auth0/auth0-react';
+import {React, useState} from 'react';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+
 import './App.css';
-import Logo from './components/logo';
-import Button from './components/button';
-import Search from './components/search';
-import Property from './components/property';
-import Ads from './components/ads';
+import LoginButton from './components/Login';
+import LogoutButton from './components/Logout';
+import Profile from './components/Profile';
+import Logo from './components/Logo';
+import Button from './components/Button';
+import Search from './components/Search';
+import Property from './components/Property';
+import Ads from './components/Ads';
 
 function App() {
+
+  const {isAuthenticated}=useAuth0();
+
+  // mostrar el menú de 'user settings' cuando se clickea en el boton
+  const [hideProperty, setHideProperty]=useState('properties');
+
+  // Funcion para esconder un elemento de clase "name".
+  const hideElement=(name)=>{
+    if(hideProperty===`${name}`){
+
+      setHideProperty(`${name} hide`);
+      setTimeout(()=>setHideProperty(`${name} hide erase`),2000)
+      
+    }else if(hideProperty===`${name} hide erase`){
+      setHideProperty(`${name} hide`);
+      setTimeout(()=>setHideProperty(`${name}`),1);
+    }
+  }
+
   return (
     <div className="App">
 
-      <div className='banner-container'>
+      <header className='header banner-container'>
 
-        <Logo />
+        
+          <Logo />
 
         <div className='buttons-search-container'>
 
           <div className='buttons-container'>
-            <Button
-            buttonType='login-button banner-button'
-            text='Ingresar'
-            />
-
-            <Button
-            buttonType='register-button banner-button'
-            text='Registrar' />
 
             <Button
             buttonType='publish-button banner-button'
-            text='Publicar' />
+            text='Publicar'
+            onClick={()=> hideElement('properties')} />
+
+
+            {
+              isAuthenticated ? (
+                
+                <>
+
+                  <div className='logged-auth'>
+                    <Profile />
+                    <DropdownButton className='dropdownButton' drop='down-centered' align='centered'>
+                      <DropdownMenu>
+                        <Dropdown.Item onClick={()=>hideElement('properties')}>Configuracion</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item ><LogoutButton /></Dropdown.Item>
+                      </DropdownMenu>
+                
+                    </DropdownButton>
+                
+                  </div>
+                </>
+              ) : 
+              (
+                <LoginButton className='unlogged-auth'/>
+                ) 
+              }
+
 
           </div>
 
           <Search />
 
         </div>
+      </header>
 
-
-      </div>
+      <main className='main'>
 
 
       <div className='property-container'>
@@ -50,7 +101,7 @@ function App() {
 
       </div>
         
-      <div className='properties'>
+      <div className={hideProperty}>
         
       <Property
       location='Direccion'
@@ -129,6 +180,12 @@ function App() {
       </div>
 
       </div>
+
+      </main>
+
+      <footer className='footer'>
+        
+      </footer>
 
     </div>
   );

@@ -1,28 +1,33 @@
 .banner-logo-container{
-  width: 209px;
-  height: 155px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: 90px;
-  margin-bottom: 10px;
+  width: 209px !important;
+  height: 155px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 90px !important;
+  margin-bottom: 10px !important;
 }
 
 .banner-logo-container
 img{
-  width: 153px;
-  height: 125px;
-  margin-left: 35px;
-  margin-bottom: -15px;
+  width: 183px !important;
+  height: 155px !important;
+  margin-bottom: -64px !important;
+}
+
+.banner-logo-container
+a{
+  text-decoration: none !important;
 }
 
 .banner-logo-container
 h1{
-  color: rgba(255, 255, 255, 90%);
-  font-size: 35px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  user-select: none;
-  text-shadow: -1px 10px 7px rgba(0,0,0,0.4);
+  font-family: 'Quantico', sans-serif !important;
+  color: rgba(255, 255, 255, 0.752) !important;
+  font-size: 35px !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px !important;
+  user-select: none !important;
+  text-shadow: -1px 10px 7px rgba(0,0,0,0.4) !important;
 }
