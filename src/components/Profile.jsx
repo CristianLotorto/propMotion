@@ -1,5 +1,4 @@
 import React from "react";
-import '../style/profile.css'
 import { useAuth0 } from "@auth0/auth0-react";
 
 
@@ -12,11 +11,11 @@ function Profile(){
 
   return(
     isAuthenticated &&(
-      <div className='profile-container'>
-        <img src={user.picture} alt={user.name} />
-        <div className='user-data'>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+      <div className='h-5 w-auto flex items-center justify-center cursor-pointer ml-5'>
+        <img className="w-10 h-10 mr-4 rounded-full" src={user.picture} alt={user.name} />
+        <div className='flex-col item-center justify-center font-quantico font-extrabold text-slate-100 '>
+        <h2 className="text-lg">{user.name}</h2>
+        <p className="text-xs">{user.email}</p>
         </div>
       </div>
 

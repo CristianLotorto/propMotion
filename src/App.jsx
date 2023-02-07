@@ -1,77 +1,55 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import {React, useState} from 'react';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Transition } from '@headlessui/react'
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
-
-import './App.css';
 import LoginButton from './components/Login';
-import LogoutButton from './components/Logout';
-import Profile from './components/Profile';
 import Logo from './components/Logo';
 import Button from './components/Button';
 import Search from './components/Search';
 import Property from './components/Property';
 import Ads from './components/Ads';
+import DropdownMenu from './components/DropdownMenu';
+import { getValue } from '@testing-library/user-event/dist/utils';
 
 function App() {
+  const configButton=document.getElementById('configuration');
+  console.log(getValue(document.getElementById('configuration')));
 
   const {isAuthenticated}=useAuth0();
 
   // mostrar el menú de 'user settings' cuando se clickea en el boton
-  const [hideProperty, setHideProperty]=useState('properties');
+  const [hideProperty, setHideProperty]=useState(true);
 
-  // Funcion para esconder un elemento de clase "name".
-  const hideElement=(name)=>{
-    if(hideProperty===`${name}`){
-
-      setHideProperty(`${name} hide`);
-      setTimeout(()=>setHideProperty(`${name} hide erase`),2000)
-      
-    }else if(hideProperty===`${name} hide erase`){
-      setHideProperty(`${name} hide`);
-      setTimeout(()=>setHideProperty(`${name}`),1);
-    }
-  }
 
   return (
     <div className="App">
 
-      <header className='header banner-container'>
+      <header id='header' className='w-full h-56 bg-gradient-to-bl from-neutral-700 to-nautral-900 banner-container flex items-center justify-between mt-2 shadow-lg'>
 
         
           <Logo />
 
-        <div className='buttons-search-container'>
+        <div className='mr-10 flex-col justify-between items-center'>
 
-          <div className='buttons-container'>
+          <Search />
+
+          <div className='w-auto flex items-center justify-center mt-8 mr-7'>
 
             <Button
-            buttonType='publish-button banner-button'
+            buttonType="w-33 h-10 mr-5"
             text='Publicar'
-            onClick={()=> hideElement('properties')} />
+            onClick={()=>setHideProperty((hideProperty) => !hideProperty)} />
 
-
+            
             {
               isAuthenticated ? (
                 
                 <>
+                
+                    <DropdownMenu />
+                    
 
-                  <div className='logged-auth'>
-                    <Profile />
-                    <DropdownButton className='dropdownButton' drop='down-centered' align='centered'>
-                      <DropdownMenu>
-                        <Dropdown.Item onClick={()=>hideElement('properties')}>Configuracion</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item ><LogoutButton /></Dropdown.Item>
-                      </DropdownMenu>
-                
-                    </DropdownButton>
-                
-                  </div>
                 </>
               ) : 
               (
@@ -82,7 +60,6 @@ function App() {
 
           </div>
 
-          <Search />
 
         </div>
       </header>
@@ -90,9 +67,9 @@ function App() {
       <main className='main'>
 
 
-      <div className='property-container'>
+      <div id='ads-property-container' className='w-full flex justify-between'>
 
-      <div className='ads-left'>
+      <div id='ads-container' className='w-64 h-full mr-10 flex-col items-center justify-around'>
 
         <Ads />
         <Ads />
@@ -100,8 +77,19 @@ function App() {
         <Ads />
 
       </div>
-        
-      <div className={hideProperty}>
+
+    
+      <Transition
+      as='div' id='property-container' className='mr-5'
+      show={hideProperty}
+      enter="transition-opacity duration-1000"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition-opacity duration-1000"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+      >
+      
         
       <Property
       location='Direccion'
@@ -177,7 +165,7 @@ function App() {
       descTitle='Titulo Descripcion'
       desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'/>
 
-      </div>
+      </Transition>
 
       </div>
 

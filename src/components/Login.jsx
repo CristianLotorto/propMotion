@@ -8,7 +8,7 @@ function LoginButton(){
   return (
   <Button 
   onClick={()=>loginWithRedirect()}
-  buttonType="button banner-button"
+  buttonType="w-33 h-10"
   text='Ingresar' />);
 }
 

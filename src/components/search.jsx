@@ -1,10 +1,9 @@
 import React from "react";
-import '../style/search.css';
 
 function Search(){
   return(
-    <form className='search'>
-      <input type="text" placeholder='Buscar' />
+    <form id='search'>
+      <input className=' font-quantico text-sm h-10 w-72 pl-3 rounded-md shadow-lg border-solid border-2 border-inherit' type="text" placeholder='Buscar' />
     </form>
   );
 }
